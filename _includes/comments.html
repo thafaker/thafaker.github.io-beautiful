@@ -1,26 +1,5 @@
 {% if page.comments %}
   {% include isso.html %}
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const article = document.querySelector("article");
-    if (!article) return;
-
-    const commentsDiv = document.createElement("div");
-    commentsDiv.id = "isso-thread";
-    commentsDiv.setAttribute("data-title", document.title);
-    commentsDiv.setAttribute("data-url", window.location.pathname);
-    article.appendChild(commentsDiv);
-
-    const script = document.createElement("script");
-    script.src = "https://isso.janmontag.de/js/embed.min.js";
-    script.setAttribute("data-isso", "https://isso.janmontag.de/");
-    script.setAttribute("data-isso-css", "false");  // <-- DAS HAT GEFEHLT
-    script.setAttribute("data-isso-avatar", "false"); // Gravatare aus
-	script.setAttribute("data-isso-vote", "false") // voting aus
-    script.async = true;
-    document.body.appendChild(script);
-});
-</script>
   {% include disqus.html %}
   {% include fb-comment.html %}
   {% include staticman-comments.html %}

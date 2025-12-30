@@ -1,23 +1,30 @@
 {%- if site.isso -%}
+{% if page.comments %}
+<div id="isso-container"></div>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const article = document.querySelector("article");
-    if (!article) return;
+    const container = document.getElementById("isso-container");
+    
+    if (!article || !container) return;
 
     const commentsDiv = document.createElement("div");
     commentsDiv.id = "isso-thread";
-    commentsDiv.setAttribute("data-title", document.title);
-    commentsDiv.setAttribute("data-url", window.location.pathname);
-    article.appendChild(commentsDiv);
+    commentsDiv.setAttribute("data-title", "{{ page.title | escape }}");
+    commentsDiv.setAttribute("data-url", "{{ page.url | absolute_url }}");
+    container.appendChild(commentsDiv);
 
     const script = document.createElement("script");
     script.src = "https://isso.janmontag.de/js/embed.min.js";
     script.setAttribute("data-isso", "https://isso.janmontag.de/");
-    script.setAttribute("data-isso-css", "false");  // <-- DAS HAT GEFEHLT
-    script.setAttribute("data-isso-avatar", "false"); // Gravatare aus
-	script.setAttribute("data-isso-vote", "false") // voting aus
+    script.setAttribute("data-isso-css", "false");
+    script.setAttribute("data-isso-avatar", "false");
+    script.setAttribute("data-isso-vote", "false");
+    script.setAttribute("data-isso-reply-notifications", "true");
     script.async = true;
     document.body.appendChild(script);
 });
 </script>
+{% endif %}
 {%- endif -%}
