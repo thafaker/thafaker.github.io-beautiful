@@ -23,4 +23,6 @@ Wie kann ich denn hier eine Bild-Unterschrift setzen?
 
 Eigentlich plane ich sogar, meine Website von *Writefreely* auf Jekyll zu ziehen. Ich bastle oft mehr denn ich schreibe. Man sehe es mir nach. Schauen wir mal was wird - was wird.
 
+[**UPDATE**] Ich habe ein paar Bilder hoch geladen, nämlich die von der alten Website, und jetzt baut und deployd er nicht mehr. Das möchte ich testen. Mit diesem Update. 
+
 *Danke*.
