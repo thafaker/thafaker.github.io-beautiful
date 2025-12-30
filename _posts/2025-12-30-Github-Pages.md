@@ -1,7 +1,8 @@
 ---
 layout: post
-title: Github Pages und mein vielleicht neuer Workflow
-subtitle: Ich migriere janmontag.de zu github und jekyll
+title: "Github Pages und mein vielleicht neuer Workflow"
+subtitle: "Ich migriere janmontag.de zu Github,com und Jekyll"
+date: 2025-12-30 20:49:02 +0100
 tags: [test, github]
 author: Jan Montag
 ---
