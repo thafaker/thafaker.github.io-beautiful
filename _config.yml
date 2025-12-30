@@ -20,11 +20,8 @@ author: Jan Montag
 ###############################################
 
 navbar-links:
-  About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+  About Me: "https://herrmontag.de/about/"
+  Author's home: "https://herrmontag.de"
 
 ################
 # --- Logo --- #
