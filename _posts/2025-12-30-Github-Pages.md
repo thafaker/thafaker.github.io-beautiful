@@ -18,6 +18,7 @@ Auch kann ich Artikel, die schon bestehen, einfach editieren. Da ich sowieso in 
 
 <details markdown="1">
 <summary>Was fehlt? (Klick hier!)</summary>
+* https - htst broken
 * Kommentare
 * URLs
 * Bilder
