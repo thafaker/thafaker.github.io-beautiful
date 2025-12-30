@@ -1,0 +1,15 @@
+/* Füge Brevia als primäre Schriftart für die gesamte Seite hinzu */
+body {
+    font-family: 'Brevia', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* Optional: Verwende Brevia ExtraBlack für besondere Überschriften */
+h1, h2, .navbar-brand {
+    font-family: 'Brevia ExtraBlack', 'Brevia', sans-serif;
+}
+
+/* Optional: Verwende die spezielle Regular-Italic-Variante */
+em, i {
+    font-family: 'Brevia Regular', 'Brevia', serif;
+    font-style: italic; /* Wichtig, da die Font-Family "Brevia Regular" heißt */
+}
