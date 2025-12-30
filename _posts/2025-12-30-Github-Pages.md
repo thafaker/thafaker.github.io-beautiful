@@ -16,6 +16,8 @@ Ich nutze also **Github Pages** und **Jekyll**. Ich deploye die Seite von meinem
 Das funktioniert ganz gut, hat aber den Nachteil, dass es nur von meinem Computer mit Terminal funktioniert. *Aber das stimmt nicht ganz*. Ich kann via Github.com auch einfach eine Seite anlegen und entspricht diese dem Standard, dann wird sie nach dem Speichern auch gerendert und deployd, so als würde ich es im Terminal tun. Auch kann ich Artikel die schon bestehen, einfach editieren. Da ich sowieso in Markdown schreibe, sollte das kein Problem sein. Nachteil: Bilder. Der Bilder-Upload ist natürlich von unterwegs via Handy nicht gut gelöst.
 
 <details markdown="1">
-<summary>Click here!</summary>
-Here you can see an **expandable** section
+<summary>Klick hier!</summary>
+* Kommentare
+* URLs
+* Bilder
 </details>
