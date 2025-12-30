@@ -3,7 +3,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="{{ '/assets/fonts/brevia/stylesheet.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
-  
+
+<!-- mein Zeugs -->
+<!-- json-ld -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ if .PlainDisplayTitle }}{{ .PlainDisplayTitle | js }}{{ else }}{{ .Created8601 }}{{ end }}",
+  "name": "{{ if .PlainDisplayTitle }}{{ .PlainDisplayTitle | js }}{{ else }}{{ .Created8601 }}{{ end }}",
+  "url": "{{ .CanonicalURL .Host }}",
+  "datePublished": "{{ .Created8601 }}",
+  "dateModified": "{{ .Created8601 }}",
+  "inLanguage": "de-DE",
+  "author": {
+    "@type": "Person",
+    "name": "{{ .Collection.DisplayTitle | js }}",
+    "url": "https://janmontag.de"
+  }{{ if gt (len .Images) 0 }},
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ index .Images 0 }}",
+    "width": 1200,
+    "height": 675
+  }{{ end }},
+  "articleBody": "{{ if .Summary }}{{ .Summary | js }}{{ else }}{{ .PlainDisplayTitle | js }}{{ end }}",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "{{ .Collection.DisplayTitle | js }}",
+    "url": "https://janmontag.de"
+  }
+}
+</script>
+<!-- / json-ld -->
+		
+<!-- Die H-Karte Junge -->
+<div class="h-card" style="display: none;">
+    <a class="u-url" href="https://apfelhammer.de" style="display: none;">Apfelhammer</a>
+    <a class="u-url" href="https://thahipster.de" style="display: none;">thahipster.de</a>
+    <a class="u-url" href="https://herrmontag.de" style="display: none;">.macroblog HerrMontag.de</a>
+    <a class="u-url" href="https://janmontag.de" style="display: none;">.microblog JanMontag.de</a>
+    <p class="p-note">Herr Montag being the Web since 1997. Herr Montag works and lives in Erfurt, Thuringia, Germany.</p>
+    <p class="p-name">Jan Montag</p>
+    <img class="u-photo" src="https://janmontag.de/img/author_jan_montag.jpg" alt="Profilbild" style="display: none;">
+</div>
+<!-- / Die H-Karte Junge -->
+
+		<!-- all rel mes -->
+		<link rel="me" href="mailto:hallo@herrmontag.de">
+        <link rel="me" href="https://thahipster.de" />
+        <link rel="me" href="https://thafaker.crabdance.com" />
+        <link rel="me" href="https://janmontag.de" />
+        <link rel="me" href="https://thafaker.de" />
+        <link rel="me" href="https://herrmontag.de" />
+        <link rel="me" href="https://apfelhammer.de" />
+        <link rel="me" href="https://bsky.app/profile/herrmontag.de" />
+        <link rel="me" href="https://open.spotify.com/user/31pff5mvgaxh2npxksruczaef3li" />
+        <link rel="me" href="https://instagram.com/vinylisation/" />
+        <link rel="me" href="https://www.instagram.com/herr_montag_/" />
+        <link rel="me" href="https://twitter.com/ErfurterDom" />
+		<link rel="me" href="https://mastodon.art/@herrmontag_de" />
+        <link rel="me" href="https://defcon.social/@apfelhammer" />
+		<link rel="me" href="hallo@herrmontag.de" />
+		
+		<link rel="webmention" href="https://webmention.io/janmontag.de/webmention" />
+        <link rel="pingback" href="https://webmention.io/janmontag.de/xmlrpc" />
+
+		<link rel="me" href="https://apfelhammer.de">
+		<link rel="pingback" href="https://webmention.io/janmontag.de/xmlrpc" />
+		<link rel="authorization_endpoint" href="https://indieauth.com/auth">
+		<link rel="token_endpoint" href="https://tokens.indieauth.com/token">
+		<link href="https://github.com/thafaker" rel="me">
+		<!-- all rel mes -->
+<!-- / mein Zeug -->
+		  
   {% capture pagetitle %}
     {%- if page.share-title -%}
       {{ page.share-title | strip_html | xml_escape }}
