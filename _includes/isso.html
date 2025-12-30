@@ -1,5 +1,4 @@
-{% if page.comments %}
-  {% include isso.html %}
+{%- if site.isso -%}
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const article = document.querySelector("article");
@@ -21,10 +20,4 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(script);
 });
 </script>
-  {% include disqus.html %}
-  {% include fb-comment.html %}
-  {% include staticman-comments.html %}
-  {% include utterances-comment.html %}
-  {% include giscus-comment.html %}
-  {% include commentbox.html %}
-{% endif %}
+{%- endif -%}
