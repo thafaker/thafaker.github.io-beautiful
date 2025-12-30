@@ -2,10 +2,7 @@
 layout: post
 title: Github Pages und mein vielleicht neuer Workflow
 subtitle: Ich migriere janmontag.de zu github und jekyll
-gh-repo: thafaker/thafaker.github.io
 tags: [test, github]
-comments: true
-mathjax: true
 author: Jan Montag
 ---
 
