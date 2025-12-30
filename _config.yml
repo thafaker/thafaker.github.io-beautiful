@@ -20,8 +20,9 @@ author: Jan Montag
 ###############################################
 
 navbar-links:
-  About Me: "https://herrmontag.de/about/"
-  Author's home: "https://herrmontag.de"
+  Über: "https://herrmontag.de/about/"
+  Autor: "https://herrmontag.de"
+  Lyrik: "https://thafaker.github.io/tags/#lyrik"
 
 ################
 # --- Logo --- #
