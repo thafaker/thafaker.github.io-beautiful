@@ -3,6 +3,7 @@ layout: post
 title: "Wochenstatistik janmontag.de für die KW 51: 15. Dezember 2025 - 21. Dezember 2025"
 date: 2025-12-22 06:00:02 +0100
 author: Jan Montag
+tags: ["Wochenstatistik"]
 permalink: /wochenstatistik-kw-51-2025/
 ---
 
