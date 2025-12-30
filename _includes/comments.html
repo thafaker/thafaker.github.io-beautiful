@@ -1,5 +1,20 @@
 {% if page.comments %}
-  {% include isso.html %}
+  {% if site.isso.enabled and page.comments %}
+<section class="comments">
+    <h3>Kommentare</h3>
+    <div id="isso-thread"
+         data-title="{{ page.title }}"
+         data-url="{{ page.url | absolute_url }}"
+         data-isso="{{ site.isso.url }}"></div>
+    
+    <script src="{{ site.isso.url }}/js/embed.min.js"
+            data-isso="{{ site.isso.url }}"
+            data-isso-css="false"
+            data-isso-avatar="false"
+            data-isso-vote="false"
+            async></script>
+</section>
+  {% endif %}
   {% include disqus.html %}
   {% include fb-comment.html %}
   {% include staticman-comments.html %}
