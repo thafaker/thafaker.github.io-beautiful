@@ -21,4 +21,6 @@ Wie kann ich denn hier eine Bild-Unterschrift setzen?
 {: .box-note}
 **Note:** Achtung. Wir befinden uns im Testing.
 
+Eigentlich plane ich sogar, meine Website von *Writefreely* auf Jekyll zu ziehen. Ich bastle oft mehr denn ich schreibe. Man sehe es mir nach. Schauen wir mal was wird - was wird.
+
 *Danke*.
