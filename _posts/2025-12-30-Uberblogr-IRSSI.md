@@ -25,4 +25,7 @@ Eigentlich plane ich sogar, meine Website von *Writefreely* auf Jekyll zu ziehen
 
 [**UPDATE**] Ich habe ein paar Bilder hoch geladen, nämlich die von der alten Website, und jetzt baut und deployd er nicht mehr. Das möchte ich testen. Mit diesem Update. 
 
+{: .box-success}
+Ich glaube, das funktioniert jetzt. Also nicht mit den Bildern, die scheinen das große Problem zu bleiben. Aber der Rest.
+
 *Danke*.
