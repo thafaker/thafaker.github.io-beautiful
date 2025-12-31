@@ -1,0 +1,103 @@
+version: 1
+collections:
+  pages:
+    label: Seiten
+    folder: ""
+    create: true
+    fields:
+      - name: layout
+        label: Layout
+        type: select
+        default: page
+        options:
+          - label: Seite
+            value: page
+          - label: Post
+            value: post
+          - label: Startseite
+            value: home
+          - label: Minimal
+            value: minimal
+      - name: title
+        label: Titel
+        type: text
+        required: true
+      - name: subtitle
+        label: Untertitel
+        type: text
+      - name: cover-img
+        label: Titelbild (Pfad)
+        type: image
+        directory: "/img"
+        preview: true
+        required: false
+      - name: avatar
+        label: Profilbild (nur für Startseite)
+        type: image
+        directory: "/img"
+        preview: true
+        required: false
+      - name: show-avatar
+        label: Profilbild anzeigen
+        type: boolean
+        default: true
+        showWhen:
+          layout: home
+      - name: social-links
+        label: Soziale Links anzeigen
+        type: boolean
+        default: true
+      - name: tags
+        label: Tags (nur für Posts)
+        type: list
+        field:
+          type: text
+        showWhen:
+          layout: post
+      - name: content
+        label: Inhalt
+        type: markdown
+        required: true
+
+  posts:
+    label: Blog Posts
+    folder: "_posts"
+    create: true
+    name: "{{ date | date: '%Y-%m-%d' }}-{{ title | slugify }}.md"
+    fields:
+      - name: layout
+        label: Layout
+        type: hidden
+        default: post
+      - name: title
+        label: Titel
+        type: text
+        required: true
+      - name: subtitle
+        label: Untertitel
+        type: text
+      - name: date
+        label: Datum
+        type: datetime
+        default: "now"
+        format: "YYYY-MM-DD HH:mm:ss"
+      - name: tags
+        label: Tags
+        type: list
+        field:
+          type: text
+      - name: cover-img
+        label: Titelbild
+        type: image
+        directory: "/img"
+        preview: true
+      - name: content
+        label: Inhalt
+        type: markdown
+        required: true
+
+  images:
+    label: Bilder
+    folder: "/img"
+    create: true
+    type: images
