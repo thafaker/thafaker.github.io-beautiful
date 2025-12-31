@@ -1,0 +1,95 @@
+media:
+  input: img
+  output: img
+
+content:
+  # --------------------
+  # Blog Posts
+  # --------------------
+  - name: posts
+    label: Beiträge
+    type: collection
+    path: _posts
+    filename: "{year}-{month}-{day}-{slug}.md"
+    view:
+      fields: [ title, date, tags ]
+      sort: [ date, desc ]
+    fields:
+      - name: layout
+        label: Layout
+        type: string
+        hidden: true
+        default: post
+
+      - name: title
+        label: Titel
+        type: string
+        required: true
+
+      - name: date
+        label: Veröffentlichungsdatum
+        type: datetime
+        required: true
+
+      - name: tags
+        label: Tags
+        type: list
+        required: false
+
+      - name: subtitle
+        label: Untertitel
+        type: string
+        required: false
+
+      - name: image
+        label: Beitragsbild
+        type: image
+        required: false
+        description: "Bild aus /img/"
+
+      - name: share-img
+        label: Social Share Image
+        type: image
+        required: false
+        description: "OpenGraph / Social Preview"
+
+      - name: comments
+        label: Kommentare aktivieren
+        type: boolean
+        default: true
+
+      - name: body
+        label: Inhalt
+        type: rich-text
+        required: true
+
+  # --------------------
+  # Seiten
+  # --------------------
+  - name: pages
+    label: Seiten
+    type: collection
+    path: /
+    match: "*.md"
+    exclude:
+      - index.md
+      - README.md
+    fields:
+      - name: layout
+        label: Layout
+        type: string
+        default: page
+
+      - name: title
+        label: Titel
+        type: string
+        required: true
+
+      - name: permalink
+        label: Permalink
+        type: string
+        required: false
+
+      - name: body
+        label: Inhalt
+        type: rich-text
