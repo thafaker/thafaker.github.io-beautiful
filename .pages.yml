@@ -2,7 +2,7 @@
 backend:
   name: github
   repo: thahipster/thahipster.github.io
-  branch: main   # ggf. auf 'master' ändern
+  branch: master   # ggf. auf 'master' ändern
 
 media_folder: "img"
 public_folder: "/img"
