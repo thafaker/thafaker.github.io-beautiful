@@ -26,3 +26,6 @@ Kann ich eigentlich auch ohne großem Aufwand ein automatisiertes Deployment auf
 * URLs sind noch nicht korrekt alt - neu
 * Bilder URLs stimmen auch noch nicht
 </details>
+
+{: .box-error}
+Das funktioniert alles nicht.
