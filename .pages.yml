@@ -32,10 +32,7 @@ content:
         label: Untertitel
         type: string
 
-      - name: date
-        label: Datum
-        type: datetime
-        required: true
+      - name: date, label: Date, type: date
 
       # -------- Metadaten --------
       - name: author
