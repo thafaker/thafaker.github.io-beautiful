@@ -17,6 +17,8 @@ Das funktioniert ganz gut, hat aber den Nachteil, dass es nur von meinem Compute
 {: .box-warning}
 Auch kann ich Artikel, die schon bestehen, einfach editieren. Da ich sowieso in Markdown schreibe, sollte das kein Problem sein. **Nachteil**: Bilder. Der Bilder-Upload ist natürlich von unterwegs (vor allem via Handy) nicht gut lösbar.
 
+Kann ich eigentlich auch ohne großem Aufwand ein automatisiertes Deployment auf meinem eigenen Server laufen lassen? So wie es mit Github-Pages funktioniert?
+
 <details markdown="1">
 <summary>Was fehlt? (Klick hier!)</summary>
 * https - htst broken (HTTP Strict Transport Security)
