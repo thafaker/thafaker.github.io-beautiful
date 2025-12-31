@@ -3,20 +3,22 @@ media:
   output: img
 
 content:
-  # --------------------
-  # Blog Posts
-  # --------------------
+  # -------------------------------------------------
+  # Blog Posts (Beautiful Jekyll kompatibel)
+  # -------------------------------------------------
   - name: posts
     label: Beiträge
     type: collection
     path: _posts
     filename: "{year}-{month}-{day}-{slug}.md"
+
     view:
       fields: [ title, date, tags ]
       sort: [ date, desc ]
+
     fields:
+      # -------- Pflichtfelder --------
       - name: layout
-        label: Layout
         type: string
         hidden: true
         default: post
@@ -26,70 +28,59 @@ content:
         type: string
         required: true
 
+      - name: subtitle
+        label: Untertitel
+        type: string
+
       - name: date
-        label: Veröffentlichungsdatum
+        label: Datum
         type: datetime
         required: true
+
+      # -------- Metadaten --------
+      - name: author
+        label: Autor
+        type: string
 
       - name: tags
         label: Tags
         type: list
-        required: false
+        description: "Wird als YAML-Array gespeichert: [tag1, tag2]"
 
-      - name: subtitle
-        label: Untertitel
+      - name: comments
+        label: Kommentare aktiv
+        type: boolean
+        default: true
+
+      - name: mathjax
+        label: MathJax aktivieren
+        type: boolean
+        default: false
+
+      # -------- GitHub Features --------
+      - name: gh-repo
+        label: GitHub Repository
         type: string
-        required: false
+        description: "z.B. daattali/beautiful-jekyll"
 
+      - name: gh-badge
+        label: GitHub Badges
+        type: list
+        description: "Mögliche Werte: star, fork, follow"
+
+      # -------- Bilder --------
       - name: image
-        label: Beitragsbild
+        label: Artikelbild (Header)
         type: image
-        required: false
-        description: "Bild aus /img/"
+        description: "Wird als image: /img/xyz.jpg gesetzt"
 
       - name: share-img
         label: Social Share Image
         type: image
-        required: false
-        description: "OpenGraph / Social Preview"
+        description: "OpenGraph / Twitter Card"
 
-      - name: comments
-        label: Kommentare aktivieren
-        type: boolean
-        default: true
-
+      # -------- Inhalt --------
       - name: body
         label: Inhalt
         type: rich-text
         required: true
-
-  # --------------------
-  # Seiten
-  # --------------------
-  - name: pages
-    label: Seiten
-    type: collection
-    path: /
-    match: "*.md"
-    exclude:
-      - index.md
-      - README.md
-    fields:
-      - name: layout
-        label: Layout
-        type: string
-        default: page
-
-      - name: title
-        label: Titel
-        type: string
-        required: true
-
-      - name: permalink
-        label: Permalink
-        type: string
-        required: false
-
-      - name: body
-        label: Inhalt
-        type: rich-text
