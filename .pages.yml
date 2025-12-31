@@ -1,103 +1,40 @@
-version: 1
-collections:
-  pages:
-    label: Seiten
-    folder: ""
-    create: true
-    fields:
-      - name: layout
-        label: Layout
-        type: select
-        default: page
-        options:
-          - label: Seite
-            value: page
-          - label: Post
-            value: post
-          - label: Startseite
-            value: home
-          - label: Minimal
-            value: minimal
-      - name: title
-        label: Titel
-        type: text
-        required: true
-      - name: subtitle
-        label: Untertitel
-        type: text
-      - name: cover-img
-        label: Titelbild (Pfad)
-        type: image
-        directory: "/img"
-        preview: true
-        required: false
-      - name: avatar
-        label: Profilbild (nur für Startseite)
-        type: image
-        directory: "/img"
-        preview: true
-        required: false
-      - name: show-avatar
-        label: Profilbild anzeigen
-        type: boolean
-        default: true
-        showWhen:
-          layout: home
-      - name: social-links
-        label: Soziale Links anzeigen
-        type: boolean
-        default: true
-      - name: tags
-        label: Tags (nur für Posts)
-        type: list
-        field:
-          type: text
-        showWhen:
-          layout: post
-      - name: content
-        label: Inhalt
-        type: markdown
-        required: true
+# pages-cms Konfiguration für Beautiful Jekyll
+backend:
+  name: github
+  repo: thahipster/thahipster.github.io
+  branch: main   # ggf. auf 'master' ändern
 
-  posts:
-    label: Blog Posts
+media_folder: "img"
+public_folder: "/img"
+
+site_url: https://thahipster.github.io
+
+collections:
+  - name: "posts"
+    label: "Blogposts"
     folder: "_posts"
     create: true
-    name: "{{ date | date: '%Y-%m-%d' }}-{{ title | slugify }}.md"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: true
     fields:
-      - name: layout
-        label: Layout
-        type: hidden
-        default: post
-      - name: title
-        label: Titel
-        type: text
-        required: true
-      - name: subtitle
-        label: Untertitel
-        type: text
-      - name: date
-        label: Datum
-        type: datetime
-        default: "now"
-        format: "YYYY-MM-DD HH:mm:ss"
-      - name: tags
-        label: Tags
-        type: list
-        field:
-          type: text
-      - name: cover-img
-        label: Titelbild
-        type: image
-        directory: "/img"
-        preview: true
-      - name: content
-        label: Inhalt
-        type: markdown
-        required: true
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Untertitel", name: "subtitle", widget: "string", required: false }
+      - { label: "Datum", name: "date", widget: "datetime" }
+      - { label: "Autor", name: "author", widget: "string", required: false }
+      - { label: "Kategorien", name: "categories", widget: "list", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Header-Bild", name: "image", widget: "image", required: false }
+      - { label: "Inhalt", name: "body", widget: "markdown" }
 
-  images:
-    label: Bilder
-    folder: "/img"
-    create: true
-    type: images
+  - name: "pages"
+    label: "Seiten"
+    files:
+      - file: "about.md"
+        label: "Über mich"
+        name: "about"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Inhalt", name: "body", widget: "markdown" }
